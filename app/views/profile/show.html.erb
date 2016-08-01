@@ -3,6 +3,10 @@
 <h1>Profile</h1>
 <p>
   <strong>Login:</strong> <%= current_user.email %><br />
-  <strong>Key:</strong> <%= current_user.identity.hashkey %>
-  <%= link_to 'Regenerate', regenerate_key_path, :method => :post %>
+  <strong>Key:</strong>
+  <% if @hashkey %>
+    <%= current_user.identity.hashkey %> <%= link_to 'Regenerate', regenerate_key_path, :method => :post %>
+  <% else %>
+    No token found. <%= link_to 'Generate', regenerate_key_path, :method => :post  %>
+  <% end %>
 </p>
