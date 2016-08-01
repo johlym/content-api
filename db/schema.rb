@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160801043005) do
+ActiveRecord::Schema.define(version: 20160801063442) do
 
   create_table "identities", force: :cascade do |t|
     t.string   "hashkey"
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 20160801043005) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_identities_on_user_id"
+  end
+
+  create_table "nodes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "identifier"
+    t.string   "name"
+    t.text     "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_nodes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
