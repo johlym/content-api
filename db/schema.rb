@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160725153717) do
+ActiveRecord::Schema.define(version: 20160801043005) do
 
-  create_table "tokens", force: :cascade do |t|
-    t.string   "token"
+  create_table "identities", force: :cascade do |t|
+    t.string   "hashkey"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_tokens_on_user_id"
+    t.index ["user_id"], name: "index_identities_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

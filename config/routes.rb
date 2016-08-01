@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   get '/profile', to: 'profile#show'
 
+  post '/regenerate', to: 'profile#regenerate', as: :regenerate_key
+
   devise_for :users, controllers: { registrations: 'registrations' }
 
-  resources :token
 end
