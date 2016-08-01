@@ -1,13 +1,7 @@
 class TokenController < ApplicationController
-  def create
+  def token:string
   end
 
-  def read
-  end
-
-  def update
-  end
-
-  def delete
+  def user_id:references
   end
 end

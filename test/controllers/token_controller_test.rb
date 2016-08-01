@@ -1,23 +1,13 @@
 require 'test_helper'
 
 class TokenControllerTest < ActionDispatch::IntegrationTest
-  test "should get create" do
-    get token_create_url
+  test "should get token:string" do
+    get token_token:string_url
     assert_response :success
   end
 
-  test "should get read" do
-    get token_read_url
-    assert_response :success
-  end
-
-  test "should get update" do
-    get token_update_url
-    assert_response :success
-  end
-
-  test "should get delete" do
-    get token_delete_url
+  test "should get user_id:references" do
+    get token_user_id:references_url
     assert_response :success
   end
 
